@@ -1,0 +1,13 @@
+<h1>Create A New Article</h1>
+<br>
+<%= form_for @article, url: {action: "create"} do |f| %>
+  <%= f.label :hed %>
+  <%= f.text_field :hed, placeholder: "Title your article here" %>
+  <br>
+  <%= f.label :dek %>
+  <%= f.text_field :dek, placeholder: "Write a short description here." %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_area :body, placeholder: "Write your article here.", size: "60x12" %>
+  <%= f.submit "Post Article" %>
+<% end %>

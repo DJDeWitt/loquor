@@ -1,0 +1,26 @@
+<h1>Create A New User</h1>
+<br>
+<%= form_for(@user) do |f| %>
+  <div class="fields">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <br>
+    <hr>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "Email adddress" %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :password_confirmation, "Confirm password" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="buttons">
+    <%= f.submit "Register" %>
+  </div>
+<% end %>

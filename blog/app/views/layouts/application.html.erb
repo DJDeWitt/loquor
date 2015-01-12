@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loquor</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <%= link_to 'Loquor', '/', class: "nav-link" %>
+    <%= link_to 'Articles', articles_path(@articles), class: "nav-link" %>
+    <%= link_to 'Users', users_path(@users), class: "nav-link" %>
+  </nav>
+  <hr>
+  <header>
+    <section id="session">
+      <% if logged_in? %>
+        <span>Logged in as: <%= link_to current_user.first_name, current_user, class: "session-link" %> | </span>
+        <%= link_to 'LOGOUT', logout_path, method: :delete, class: "session-link" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "session-link" %> |
+        <%= link_to 'Register', new_user_path, class: "session-link" %>
+      <% end %>
+    </section>
+  </header>
+  <hr>
+
+<%= yield %>
+
+</body>
+</html>
